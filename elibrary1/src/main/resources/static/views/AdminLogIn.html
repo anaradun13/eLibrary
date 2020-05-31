@@ -1,0 +1,55 @@
+<div ng-controller="AdminLogInCtrl">
+<div>
+		<h3>Here you can log in as an administrator</h3>
+	</div>
+	</br>
+	</br>
+		<div class="row">
+
+			<form>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-lg-6">
+							<label for="email">Email address:</label> <input type="email"
+								class="form-control" id="email">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="row">
+							<div class="col-lg-6">
+								<label for="pwd">Password:</label> <input type="password"
+									class="form-control" id="pwd">
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<!-- 			<div class="checkbox"> -->
+						<!-- 				<label><input type="checkbox">Remember me</label> -->
+						<!-- 			</div> -->
+						<button type="submit" class="btn btn-primary pull-right" id="submitAdminBtn"
+						ng-click="adminLogIn()">Submit</button>
+					</div>
+					
+					<div class="form-group" ng-init="errorEmptyMsg='false'">
+                <div class="row">
+                    <div class="col-lg-offset-2 col-lg-4">
+                        <label class="ng-hide text-danger" ng-hide="errorEmptyMsg">
+                            Please, enter valid input data!</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" ng-init="errorMsg='false'">
+                <div class="row">
+                    <div class="col-lg-offset-2 col-lg-4 error-msg">
+                        <label class="ng-hide text-danger" ng-hide="errorMsg">
+                            Sorry, something went wrong! </label>
+                    </div>
+                </div>
+            </div>
+			</form>
+
+		</div>
+		<div class="loader"></div>
+</div>
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <title>eLibrary</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/eLibrary.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<!--   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-resource.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/MainController.js"></script>
+
+</head>
+<body ng-app="app" ng-controller="MainController">
+
+<nav class="navbar navbar-inverse">
+
+  <div class="container-fluid">
+  
+    <div class="navbar-header">
+      <a class="navbar-brand" ng-show="true" ng-class="{ active: isActive('/carousel') }" href="#!carousel">eLibrary</a>
+    </div>
+  
+  <ul class="nav navbar-nav" ng-controller="MainController">
+      <li ng-show="true" ng-class="{ active: isActive('/AdminLogIn') }"><a href="#!AdminLogIn">Administrator Log In</a></li>
+      <li ng-show="true" ng-class="{ active: isActive('/LibrarianLogIn') }"><a href="#!LibrarianLogIn">Librarian Log In</a></li>
+      <li class="dropdown" ng-show="showLibOpts">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Librarian Operations<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li ng-show="isVisibleLib('/createLibrarian')" ng-class="{ active: isActive('/createLibrarian') }"><a href="#/createLibrarian">Create librarian</a></li>
+                            <li ng-show="isVisibleLib('/deleteLibrarian')" ng-class="{ active: isActive('/deleteLibrarian') }"><a href="#/deleteLibrarian">Delete librarian</a></li>
+                            <li ng-show="isVisibleLib('/getAllLibrarians')" ng-class="{ active: isActive('/getAllLibrarians') }"><a href="#/getAllLibrarians">Get all librarians</a></li>
+                            <li ng-show="isVisibleLib('/viewLibrarian')" ng-class="{ active: isActive('/viewLibrarian') }"><a href="#/viewLibrarian">View particular librarian</a></li>
+							<li ng-show="isVisibleLib('/editLibrarian')" ng-class="{ active: isActive('/editLibrarian') }"><a href="#/editLibrarian">Edit librarian</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown" ng-show="showBookOpts">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Book Operations<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li ng-show="isVisibleBook('/createBook')" ng-class="{ active: isActive('/createBook') }"><a href="#/createBook">Create book</a></li>
+                            <li ng-show="isVisibleBook('/deleteBook')" ng-class="{ active: isActive('/deleteBook') }"><a href="#/deleteBook">Delete book</a></li>
+                            <li ng-show="isVisibleBook('/getAllBooks')" ng-class="{ active: isActive('/getAllBooks') }"><a href="#/getAllBooks">View all books</a></li>
+							<li ng-show="isVisibleBook('/issueBook')" ng-class="{ active: isActive('/issueBook') }"><a href="#/issueBook">Issue book</a></li>
+                            <li ng-show="isVisibleBook('/viewIssuedBooks')" ng-class="{ active: isActive('/viewIssuedBooks') }"><a href="#/viewIssuedBooks">View issued books</a></li>
+                            <li ng-show="isVisibleBook('/viewBook')" ng-class="{ active: isActive('/viewBook') }"><a href="#/viewBook">View particular book</a></li>
+							<li ng-show="isVisibleBook('/returnBook')" ng-class="{ active: isActive('/returnBook') }"><a href="#/returnBook">Return book</a></li>
+                            <li ng-show="isVisibleBook('/editBook')" ng-class="{ active: isActive('/editBook') }"><a href="#/editBook">Edit book</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown" ng-show="showUserOpts">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">User Operations<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li ng-show="isVisibleUser('/createUser')" ng-class="{ active: isActive('/createUser') }"><a href="#/createUser">Create User</a></li>
+                            <li ng-show="isVisibleUser('/deleteUser')" ng-class="{ active: isActive('/deleteUser') }"><a href="#/deleteUser">Delete User</a></li>
+                            <li ng-show="isVisibleUser('/getAllUsers')" ng-class="{ active: isActive('/getAllUsers') }"><a href="#/getAllUsers">Get All Users</a></li>
+							<li ng-show="isVisibleUser('/viewUser')" ng-class="{ active: isActive('/viewUser') }"><a href="#/viewUser">View Particular User</a></li>
+                            <li ng-show="isVisibleUser('/editUser')" ng-class="{ active: isActive('/editUser') }"><a href="#/editUser">Edit User</a></li>
+                        </ul>
+                       
+                    </li>
+                    
+                </ul>
+  </div>
+</nav>
+  
+<div class="container">
+
+<div ng-view></div>	
+
+<div class="loader"></div>
+  
+</div>
+
+</body>
+</html>

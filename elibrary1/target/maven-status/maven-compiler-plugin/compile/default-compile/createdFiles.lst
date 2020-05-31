@@ -1,0 +1,12 @@
+com\ana\elibrary1\DataSourceConfiguration.class
+com\ana\elibrary1\dao\AppUserDAO.class
+com\ana\elibrary1\dao\LibrarianDAO.class
+com\ana\elibrary1\beans\AppUserBean.class
+com\ana\elibrary1\beans\LibrarianBean.class
+com\ana\elibrary1\controller\BookController.class
+com\ana\elibrary1\beans\IssueBookBean.class
+com\ana\elibrary1\controller\AppUserController.class
+com\ana\elibrary1\beans\BookBean.class
+com\ana\elibrary1\controller\LibrarianController.class
+com\ana\elibrary1\ELibrary.class
+com\ana\elibrary1\dao\BookDAO.class
